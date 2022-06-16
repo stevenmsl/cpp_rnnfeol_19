@@ -14,9 +14,13 @@ using namespace sol19;
 using namespace std;
 
 /*takeaways
-  - have a pointer ahead of n steps of another pointer,
-    which is pointing to the node before the one to be
-    deleted
+  - have a pointer (fast) n+1 steps of another pointer (prev)
+  - when faster walks past the tail and becomes a nullptr
+    prev will point at the node before the node you
+    want to delete
+  - delete the node by cutting it off from the list
+  - you need a dummy node as we might need to delete the
+    head
 */
 
 Node *Solution::removeNthFromEnd(Node *head, int n)
